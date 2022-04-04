@@ -1,2 +1,2 @@
 #!/bin/bash
-cat -c l | paste -s -d ''
+cat -c 1 | paste -s -d ''
