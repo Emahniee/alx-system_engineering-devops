@@ -2,7 +2,7 @@
 # A Bash script that displays "Best School" 10 times.
 
 a=0
-until [ $a -gt 10 ]
+until [ ! $a -lt 10 ]
 do
 	echo "Best School"
 	((a++))
