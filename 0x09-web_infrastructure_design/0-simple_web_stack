@@ -1,0 +1,30 @@
+https://drive.google.com/file/d/1hEtgZemUQGCQqHgZv93IIAkVRf_zqUlz/view?usp=sharing
+
+1.
+What is a server?
+A server is computer hardware or software that stores, sends, and receives data from other computers called clients.
+ 
+What is the role of the domain name?
+A domain name provides a human-readable format for an IP address.
+ 
+What type of DNS record www is in www.foobar.com?
+A record. 
+ 
+What is the role of the web server?
+A web server is hardware or software that accepts requests via HTTP or HTTPS and responds with the content of the requested resource or an error message. Besides HTTP, web servers also support SMTP (Simple Mail Transfer Protocol) and FTP (File Transfer Protocol), used for email, file transfer, and storage.
+ 
+What is the role of the application server?
+An application server is designed to install, operate and host applications and associated services for end users, IT services and organizations and facilitates the hosting and delivery of high-end consumer or business applications.
+ 
+What is the role of the database?
+The database maintains a collection of data or information that can be easily accessed, managed, and updated.
+ 
+What is the server using to communicate with the computer of the user requesting the website?
+TCP/IP protocol suite.
+
+2. Explain the issues with this infrastructure:
+A. There are multiple SPOF(Single port of failure) in this infrastructure. If any one of the components fails, the entire site would be down.
+B. Downtime during maintenance:
+When there is a need for site maintenance on any of the system components, that component has to be put down or the entire server turned off. Since there is only one server, the website will experience downtime.
+C. Cannot scale if there is too much traffic:
+It would be difficult to scale this system because one server contains the required components. The server can quickly run out of resources or slow down when it starts receiving a lot of requests.
