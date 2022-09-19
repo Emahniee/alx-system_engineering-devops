@@ -1,0 +1,26 @@
+https://drive.google.com/file/d/15_VOZQopdGuXnmrGbi2Qb_ChSqK_I7fY/view?usp=sharing
+
+1.	Specifics about this infrastructure:
+For every additional element, why you are adding it?
+Every other element added to the system as described below, basically makes the system more secure for use and monitors the usage of the servers.
+
+What are firewalls for?
+Firewalls provide protection against outside cyber attackers by shielding your computer or network from malicious or unnecessary network traffic.  The firewall acts as an intermediary between the internal network and the external network and blocks any incoming traffic that matches the aforementioned criteria.
+
+Why is the traffic served over HTTPS?
+Traffic is served over HTTPS to ensure privacy, integrity, and security of information passing through the web servers and external networks. This is done through the use of SSL certificates that encrypts the traffic between the web servers and external network to prevent man-in-the-middle attacks, and network sniffers from sniffing the traffic which could expose valuable information.
+
+What monitoring is used for?
+Monitoring clients is used for analyzing the performance and operations of the servers, measuring the overall health, and alerting the administrator of any anomalies inthe functionalities of the server.
+
+How the monitoring tool is collecting data?
+The monitoring tool observes the servers and provides key metrics about the servers’ operations to the administrators. It automatically tests the accessibility of the servers, measures response time, and alerts for errors such as corrupt/missing files, security vulnerabilities/violations, and many other issues.
+
+Explain what to do if you want to monitor your web server QPS
+
+2.	Issues with the infrastructure:
+Terminating SSL at the load balancer level would leave the traffic between the load balancer and the web servers unencrypted. 
+
+Having only one MySQL server capable of accepting writes is an issue because it is not scalable and can act as a single point of failure for the web infrastructure.
+
+Having servers with all the same components (database, web server and application server) might be a problem because these components will tend to contend for resources on the server such as CPU, memory, I/O, etc., which can lead to poor performance and also make it difficult to locate the source of the problem. A setup like this is not easily scalable.
