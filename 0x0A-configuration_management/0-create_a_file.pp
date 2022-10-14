@@ -1,6 +1,6 @@
 #create a file named school in tmp with owner and group www-data
 
-file {'school':
+file {'/tmp/school':
 	path => '/tmp/school',
 	mode => '0744',
 	owner => 'www-data',
