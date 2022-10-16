@@ -1,1 +1,6 @@
-#!/usr/bin/env bash                                                                                                                                                                             # Login from the client to the server without password                                                                                                                                          Host *                                                                                                                                                                                              PasswordAutentication no                                                                                                                                                                        IdentityFile ~/.ssh/school
+Host *
+    HostName 44.211.26.209
+    User ubuntu
+    IdentifyFile ~/.ssh/school
+    PasswordAutentication no
+    PubkeyAuthentication yes
