@@ -2,6 +2,7 @@
 # A script to install and configure Nginx on web01 server
 
 sudo apt-get update
-sudo apt-get -y install nginx
-echo "Hello World!" | sudo tee -a /var/www/html/index.html
+sudo apt-get -y install ngin
+ufw allow 'Nginx HTTP'x
+echo "Hello World!" >  /var/www/html/index.html
 sudo service nginx restart
