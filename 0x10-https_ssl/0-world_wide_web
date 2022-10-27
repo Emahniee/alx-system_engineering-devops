@@ -1,10 +1,20 @@
 #!/usr/bin/env bash
-# Dsplay information for its subdomains www, lb-01, web-01 and web-02 - in this specific order 
-if [ "$#" -eq 1 ]
-then
-    dom="www.$1 lb-01.$1 web-01.$1 web-02.$1"
-else
-    dom="$2.$1"
-fi
+# Script that checks info about subdomains.
 
-dig $dom | awk '/ANSWER SECTION:/{getline; split($1,b,"."); print "The subdomain", b[1], "is a", $4, "record and points to", $5}'
+DigDomain () {
+	DOMAIN_RECORD=$(dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | grep -v 'ANSWER SECTION:')
+	REC_TYPE=$(echo "$DOMAIN_RECORD" | awk '{print $4}')
+	IP_ADDRESS=$(echo "$DOMAIN_RECORD" | awk '{print $5}')
+	echo "The subdomain $2 is a $REC_TYPE record and points to $IP_ADDRESS"
+}
+
+if [ $# == 2 ]
+then
+	DigDomain "$1" "$2"
+elif [ $# == 1 ]
+then
+	DigDomain "$1" "www"
+	DigDomain "$1" "lb-01"
+	DigDomain "$1" "web-01"
+	DigDomain "$1" "web-02"
+fi
