@@ -1,1 +1,1 @@
-This repository contains all projects on 0x00. Shell, basics.
+0x17. Web stack debugging #3
